@@ -55,6 +55,15 @@ export default function useSkills() {
         await axios.delete("skills/" + id);
         await getSkills();
     }
-};
 
-return {};
+    return {
+        skill,
+        skills,
+        getSkill,
+        getSkills,
+        storeSkill,
+        updateSkill,
+        destroySkill,
+        errors,
+    };
+}
