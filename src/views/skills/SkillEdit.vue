@@ -35,7 +35,7 @@
                 </div>
                 <div class="mt-4">
                     <button type="submit"
-                        class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 text-white rounded">Store</button>
+                        class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 text-white rounded">Update</button>
                 </div>
             </div>
         </form>
