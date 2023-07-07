@@ -20,33 +20,41 @@ export default function useSkills() {
     const getSkill = async (id) => {
         const response = await axios.get("skills" + id);
         skill.value = response.data.data;
-    }
+    };
 
     // store skill
     const storeSkill = async (data) => {
         try {
             await axios.post("skills", data);
-            await router.push({name: "SkillIndex"});
-        } catch(error) {
+            await router.push({ name: "SkillIndex" });
+        } catch (error) {
             if (error.response.status === 422) {
                 errors.value = error.response.data.errors;
             }
         }
-    }
+    };
 
     // update skill
     const updateSkill = async (id) => {
         try {
             await axios.put("skills/" + id, skill.value);
-            await router.push({name: "SkillIndex"});
-        } catch(error) {
+            await router.push({ name: "SkillIndex" });
+        } catch (error) {
             if (error.response.status === 422) {
                 errors.value = error.response.data.errors;
             }
         }
-    }
-
-    return {
-
     };
-}
+
+    // delete skill
+    const destroySkill = async (id) => {
+        // Show pop-up message
+        if (!window.confirm("Are You Sure?")) {
+            return;
+        }
+        await axios.delete("skills/" + id);
+        await getSkills();
+    }
+};
+
+return {};
