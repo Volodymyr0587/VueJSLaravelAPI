@@ -22,7 +22,8 @@ const router = createRouter({
     {
       path: '/skills/:id/edit',
       name: 'SkillEdit',
-      component: () => import('../views/skills/SkillEdit.vue')
+      component: () => import('../views/skills/SkillEdit.vue'),
+      props: true
     }
   ]
 })

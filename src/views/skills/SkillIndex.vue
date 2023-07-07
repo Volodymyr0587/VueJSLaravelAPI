@@ -35,8 +35,9 @@ onMounted(() => getSkills());
                         <td class="px-6 py-4">
                             {{ skill.slug }}
                         </td>
-                        <td class="px-6 py-4">
-                            Edit/Delete
+                        <td class="px-6 py-4 space-x-2">
+                            <RouterLink :to="{name: 'SkillEdit', params: {id: skill.id}}" class="px-4 py-2 bg-green-500 hover:bg-green-700 text-white rounded">Edit</RouterLink>
+                            <button class="px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded">Delete</button>
                         </td>
                     </tr>
                 </tbody>
